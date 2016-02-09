@@ -32,4 +32,8 @@ public class Playlist {
         return playcount;
     }
 
+    public Song get(int i){
+        return songList.get(i);
+    }
+
 }
