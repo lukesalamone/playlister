@@ -11,12 +11,37 @@ public class Song {
     private String Title;
     private String Artist;
     private String Album;
-    private int length;
+    private int Length;
     private int playcount;
+    private int ID;
+    private String source;
 
-    // constructor
+    // default constructor
     public Song(){
         playcount = 0;
+    }
+
+    public Song(String uri, String title, String artist, String album, int length){
+        URI = uri;
+        Title = title;
+        Artist = artist;
+        Album = album;
+        Length = length;
+        ID = 0;
+
+        // TODO account for short urls
+        if(uri.contains("youtube")){
+            source = "youtube";
+        } else if(uri.contains("spotify")){
+            source = "spotify";
+        } else if(uri.contains("soundcloud")){
+            source = "soundcloud";
+        }
+
+        if(source.equals("")){
+            source = "youtube";
+        }
+
     }
 
     public void setURI(String uri){
@@ -37,8 +62,7 @@ public class Song {
 
     public void setLength(){
         //TODO get song length. Method will vary by URI.
-        int songLength = 0;
-        length = songLength;
+        Length = 0;
     }
 
     public void incrementPlaycount(){
@@ -51,7 +75,7 @@ public class Song {
 
     public String[] songInfo(){
         return new String[] {Title, Artist, Album,
-                Integer.toString(length), Integer.toString(playcount)};
+                Integer.toString(Length), Integer.toString(playcount)};
     }
 
     //return a CardView populated with song info
@@ -62,4 +86,16 @@ public class Song {
 
         return card;
     }//end card method
+
+    public int id(){
+        return ID;
+    }
+
+    public void setID(int id){
+        ID = id;
+    }
+
+    public String source(){
+        return source;
+    }
 }

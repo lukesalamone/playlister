@@ -7,25 +7,48 @@ import java.util.ArrayList;
  */
 public class Playlist {
 
-    private ArrayList<Song> songList;
-    private int length;
+    private static ArrayList<Song> songList;
     private int playcount;
+    private String name;
 
     // default constructor
-    public Playlist(){
-        length = 0;
+    public Playlist(String name){
+        songList = new ArrayList<>();
         playcount = 0;
+        this.name = name;
+    }
+
+    public Playlist(String name, Song[] list){
+        songList = new ArrayList<>();
+        for(Song song: list){
+            add(song);
+        }
+        this.name = name;
     }
 
     // TODO add constructors for various sources i.e. soundcloud, youtube, local, etc.
 
+    public void addYoutube(String url){
+        Song song = new Song(url, url, "unknown", "unknown", 0);
+        songList.add(song);
+    }
+
+    public void addSpotify(String url){
+        Song song = new Song(url, url, "unknown", "unknown", 0);
+        songList.add(song);
+    }
+
+    public void addSoundcloud(String url){
+        Song song = new Song(url, url, "unknown", "unknown", 0);
+        songList.add(song);
+    }
+
     public void add(Song song){
         songList.add(song);
-        length++;
     }
 
     public int length(){
-        return length;
+        return songList.size();
     }
 
     public int playCount(){
@@ -36,4 +59,17 @@ public class Playlist {
         return songList.get(i);
     }
 
+    public String name(){
+        return this.name;
+    }
+
+    //TODO
+    /*
+     * @return true on success
+     * @return false on failure
+     *
+     */
+    public boolean share(){
+        return false;
+    }// end share method
 }

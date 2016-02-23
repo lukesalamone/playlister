@@ -1,5 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/playlister_login_bg"
+    android:padding="20dp">
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:inputType="textPersonName"
+        android:text="Username"
+        android:ems="10"
+        android:id="@+id/username"
+        android:layout_marginTop="120dp"
+        android:textColor="#ffffff"
+        android:background="#00000000"
+        android:onClick="usernameClicked"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:id="@+id/line"
+        android:layout_below="@+id/username"
+        android:layout_alignParentStart="true"
+        android:background="#ffffff" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:inputType="textPassword"
+        android:text="Password"
+        android:ems="10"
+        android:id="@+id/password"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/username"
+        android:background="#00000000"
+        android:textColor="#ffffff"
+        android:onClick="passwordClicked"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:id="@+id/line2"
+        android:layout_below="@+id/password"
+        android:layout_alignParentStart="true"
+        android:background="#ffffff" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="Login"
+        android:id="@+id/button_login"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/password"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/abc_text_size_headline_material"
+        android:textStyle="bold"
+        android:onClick="login" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="Sign Up"
+        android:id="@+id/button_signup"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/abc_text_size_headline_material"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true"
+        android:onClick="signup"/>
 
 </RelativeLayout>
